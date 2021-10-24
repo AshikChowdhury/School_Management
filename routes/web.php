@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +36,9 @@ Route::prefix('users')->group(function(){
     Route::get('/delete/{id}', [UserController::class, 'UserDelete'])->name('user.delete');
 });
 
+//user profile and password change
+Route::prefix('profile')->group(function(){
+    Route::get('/view', [ProfileController::class, 'ProfileView'])->name('profile.view');
+    Route::get('/edit', [ProfileController::class, 'ProfileEdit'])->name('profile.edit');
+    Route::get('/update/{id}', [ProfileController::class, 'ProfileUpdate'])->name('profile.update');
+});
