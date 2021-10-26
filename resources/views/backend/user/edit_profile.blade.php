@@ -15,7 +15,7 @@
                     <div class="box-body">
                         <div class="row">
                             <div class="col">
-                                <form method="POST" action="{{route('profile.update', $user->id)}}">
+                                <form method="POST" action="{{route('profile.update')}}" enctype="multipart/form-data">
                                     @csrf
                                     <div class="row">
                                         <div class="col-12">

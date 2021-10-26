@@ -12,12 +12,12 @@
                                 <!-- Add the bg color to the header using any of the bg-* classes -->
                                 <div class="widget-user-header bg-black">
                                     <h3 class="widget-user-username">{{$user->name}}</h3>
-                                    <a class="btn btn-rounded btn-info mb-5 float-right" href="{{route('profile.edit', $user->id)}}">Edit Profile</a>
+                                    <a class="btn btn-rounded btn-info mb-5 float-right" href="{{route('profile.edit')}}">Edit Profile</a>
                                     <h6 class="widget-user-desc">{{$user->usertype}}</h6>
                                     <h6 class="widget-user-desc">{{$user->email}}</h6>
                                 </div>
                                 <div class="widget-user-image">
-                                    <img class="rounded-circle" src="{{(!empty($user->image)) ? url('upload/user_images/'.$user->image):url('upload/no_img.png')}}" alt="User Avatar">
+                                    <img class="rounded-circle" src="{{(!empty($user->image)) ? url('upload/user_image/'.$user->image):url('upload/no_img.png')}}" alt="User Avatar">
                                 </div>
                                 <div class="box-footer">
                                     <div class="row">
