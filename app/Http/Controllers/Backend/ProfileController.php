@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -44,5 +45,26 @@ class ProfileController extends Controller
             'alert-type' => 'info',
         );
         return redirect()->route('profile.view')->with($notification);
+    }
+
+    public function PasswordChange(){
+        return view('backend.user.change_password');
+    }
+    public function PasswordUpdate(Request $request){
+
+        $validate_data = $request->validate([
+            'oldpassword'=>'required',
+            'password'=>'required|confirmed',
+        ]);
+        $hashedPassword = Auth::user()->password;
+        if (Hash::check($request->oldpassword,$hashedPassword)){
+            $user = User::find(Auth::user()->id);
+            $user->password = Hash::make($request->password);
+            $user->save();
+            Auth::logout();
+            return redirect()->route('login');
+        }else{
+            return redirect()->back();
+        }
     }
 }
