@@ -9,20 +9,20 @@
                 <!-- Basic Forms -->
                 <div class="box">
                     <div class="box-header with-border">
-                        <h4 class="box-title">Edit Student Class</h4>
+                        <h4 class="box-title">Edit Student Shift</h4>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="row">
                             <div class="col">
-                                <form method="POST" action="{{route('student.class.update', $edit_class->id)}}">
+                                <form method="POST" action="{{route('student.shift.update', $edit_shift->id)}}">
                                     @csrf
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <h5>Student Class Name<span class="text-danger">*</span></h5>
+                                                <h5>Student Shift Name<span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <input type="text" name="name" class="form-control" value="{{$edit_class->name}}" >
+                                                    <input type="text" name="name" class="form-control" value="{{$edit_shift->name}}" >
                                                     @error('name')
                                                     <span class="text-danger">{{$message}}</span>
                                                     @enderror
@@ -31,7 +31,7 @@
                                         </div>
                                     </div>
                                     <div class="text-xs-right">
-                                        <input class="btn btn-rounded btn-info" type="submit" value="Update Student Class">
+                                        <input class="btn btn-rounded btn-info" type="submit" value="Update Student Shift">
                                     </div>
                                 </form>
 

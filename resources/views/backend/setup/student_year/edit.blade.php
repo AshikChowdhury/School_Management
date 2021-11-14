@@ -48,15 +48,5 @@
         </div>
     </div>
     <!-- /.content-wrapper -->
-    <script>
-        $(document).ready(function () {
-            $('#image').change(function (e) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $('#imageShow').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(e.target.files['0']);
-            });
-        });
-    </script>
+
 @endsection

@@ -20,7 +20,7 @@
                                             <thead>
                                             <tr>
                                                 <th width="5%">SL</th>
-                                                <th>Name</th>
+                                                <th>Class</th>
                                                 <th width="25%">Action</th>
                                             </tr>
                                             </thead>

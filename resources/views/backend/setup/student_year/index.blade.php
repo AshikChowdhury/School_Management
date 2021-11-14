@@ -11,7 +11,7 @@
                             <div class="box">
                                 <div class="box-header with-border">
                                     <h3 class="box-title">Student Year List</h3>
-                                    <a class="btn btn-rounded btn-success mb-5 float-right" href="{{route('student.year.add')}}">Add Year Class</a>
+                                    <a class="btn btn-rounded btn-success mb-5 float-right" href="{{route('student.year.add')}}">Add Student Year</a>
                                 </div>
                                 <!-- /.box-header -->
                                 <div class="box-body">
