@@ -9,20 +9,20 @@
                 <!-- Basic Forms -->
                 <div class="box">
                     <div class="box-header with-border">
-                        <h4 class="box-title">Add Student Class</h4>
+                        <h4 class="box-title">Edit Student Year</h4>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <div class="row">
                             <div class="col">
-                                <form method="POST" action="{{route('student.class.store')}}">
+                                <form method="POST" action="{{route('student.year.update', $edit_year->id)}}">
                                     @csrf
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <h5>Student Class Name<span class="text-danger">*</span></h5>
                                                 <div class="controls">
-                                                    <input type="text" name="name" class="form-control" value="" >
+                                                    <input type="text" name="name" class="form-control" value="{{$edit_year->name}}" >
                                                     @error('name')
                                                     <span class="text-danger">{{$message}}</span>
                                                     @enderror
@@ -31,7 +31,7 @@
                                         </div>
                                     </div>
                                     <div class="text-xs-right">
-                                        <input class="btn btn-rounded btn-info" type="submit" value="Add Student Class">
+                                        <input class="btn btn-rounded btn-info" type="submit" value="Update Student Year">
                                     </div>
                                 </form>
 
@@ -48,4 +48,15 @@
         </div>
     </div>
     <!-- /.content-wrapper -->
+    <script>
+        $(document).ready(function () {
+            $('#image').change(function (e) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imageShow').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            });
+        });
+    </script>
 @endsection
